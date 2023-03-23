@@ -14,4 +14,9 @@ provider "aws" {
 
 resource "aws_cloudwatch_log_group" "es_logs" {
   name = "alpha/beta/melbourne/http"
+
+  tags = {
+    Environment = "development"
+    Application = "serviceA"
+  }
 }
