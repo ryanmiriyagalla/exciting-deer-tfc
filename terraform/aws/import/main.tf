@@ -13,11 +13,6 @@ provider "aws" {
 }
 
 resource "aws_cloudwatch_log_group" "es_logs" {
-  for_each = toset(["application","access"])
-  name = "alpha/beta/melbourne/${each.key}"
-
-  tags = {
-    Environment = "development"
-    Application = "serviceA"
-  }
+  for_each = toset(["first","second"])
+  name = "alpha/melbourne/${each.key}"
 }
