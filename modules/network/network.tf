@@ -5,8 +5,8 @@ resource "aws_vpc" "web_sever_vpc" {
 resource "aws_subnet" "web_sever_subnet" {
   vpc_id            = aws_vpc.web_sever_vpc.id
   cidr_block        = "172.16.10.0/24"
-  availability_zone = "ap-southeast-2a"
-  map_public_ip_on_launch = true
+  availability_zone = var.availability_zone
+  map_public_ip_on_launch = var.map_public_ip_on_launch
 }
 
 resource "aws_internet_gateway" "web_sever_gateway" {
