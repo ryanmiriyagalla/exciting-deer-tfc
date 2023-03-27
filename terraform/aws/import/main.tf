@@ -19,5 +19,7 @@ resource "aws_cloudwatch_log_group" "es_logs" {
 
 module "network" {
   source              = "git::https://github.com/ryanmiriyagalla/exciting-deer-tfc.git//modules/network?ref=tfcmodules"
-  name                = var.name
+  availability_zone                = "ap-southeast-2a"
+  map_public_ip_on_launch          = true
+
 }
